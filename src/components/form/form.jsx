@@ -1,42 +1,61 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./form.css";
+import { use } from "react";
 
-function Form({ addFlashcard }) {
-  const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState("");
+function Form({ dispatch }) {
+  const [title, setTitle] = useState("");
+  const [ingredients, setIngredients] = useState("");
+  const [instructions, setInstructions] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    addFlashcard({ question, answer });
-    setQuestion("");
-    setAnswer("");
+    const newRecipe = { title, ingredients, instructions };
+
+    const response = await fetch("http://localhost:5000/recipes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newRecipe),
+    });
+
+    if (response.ok) {
+      dispatch({
+        type: "ADD_RECIPE",
+        payload: newRecipe,
+      });
+
+      setTitle("");
+      setIngredients("");
+      setInstructions("");
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="form">
-      <label htmlFor="question" className="formContent">
-        Question:
-      </label>
       <input
         type="text"
-        className="input"
-        id="question"
-        value={question}
-        onChange={(e) => setQuestion(e.target.value)}
+        placeholder="Recipe Title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        required
+        className="title-entry"
       />
-      <label htmlFor="answer" className="formContent">
-        Answer:
-      </label>
-      <input
-        type="text"
-        className="input"
-        id="answer"
-        value={answer}
-        onChange={(e) => setAnswer(e.target.value)}
+      <textarea
+        placeholder="Ingredients"
+        value={ingredients}
+        onChange={(e) => setIngredients(e.target.value)}
+        required
+        className="fixed-textarea"
       />
-      <button type="submit" className="button">
-        Add
-      </button>
+      <textarea
+        placeholder="Instructions"
+        value={instructions}
+        onChange={(e) => setInstructions(e.target.value)}
+        required
+        className="fixed-textarea"
+      />
+      <button type="submit">Add Recipe</button>
     </form>
   );
 }

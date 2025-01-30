@@ -1,7 +1,7 @@
 html {
   width: 100%;
   height: 100%;
-  background: #20232a;
+  background: #0c7ee9;
 }
 
 .center {
@@ -13,66 +13,13 @@ html {
 body {
   height: calc(100% - 100px);
   margin: 50px 50px;
-  background: #282c34;
+  background: #1f60e4;
   box-shadow: 8px 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.react-logo {
-  width: 100px;
-  height: auto;
-}
-
-.react-logo__circle,
-.react-logo__ring {
-  transition: ease-out 1.2s;
-  transform-origin: center;
-}
-
-.react-logo__circle {
-  transform: scale(1.3) translate(180px, 108px);
-}
-
-.react-logo__ring--1 {
-  transition: ease-out 0.7s;
-  transition-delay: 2s;
-  transform: scale(0);
-}
-
-.react-logo__ring--2 {
-  transition-delay: 0.7s;
-  transform: rotateZ(60deg);
-}
-
-.react-logo__ring--3 {
-  transition-delay: 1.2s;
-  transform: rotateZ(-60deg);
-}
-.cls-1 {
-  fill: #00d8ff;
-}
-
-.cls-2 {
-  fill: none;
-  stroke: #00d8ff;
-  stroke-miterlimit: 10;
-  stroke-width: 24px;
-}
-body:hover .react-logo__circle {
-  transform: scale(1) translate(0);
-}
-
-body:hover .react-logo__ring--1 {
-  transform: scale(1);
-}
-
-body:hover .react-logo__ring--2,
-body:hover .react-logo__ring--3 {
-  transform: rotateZ(0deg);
-}
-
 .header {
-    background-color: darkslateblue;
-    border-radius: 25px;
-    padding: 10px;
-    max-width: 100%;
+  background-color: rgb(236, 191, 43);
+  border-radius: 25px;
+  padding: 10px;
+  max-width: 100%;
 }
