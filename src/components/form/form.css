@@ -49,13 +49,13 @@
 }
 
 .formContent {
-  padding: 20px;
+  padding: 10px;
 }
 
 .form {
   border: darkslateblue 3px solid;
-  border-radius: 200px;
-  margin-top: 110px;
+  border-radius: 50px;
+  margin-top: 20px;
 }
 
 .fixed-textarea {

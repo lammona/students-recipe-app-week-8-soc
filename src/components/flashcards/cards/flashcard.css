@@ -13,10 +13,9 @@
   position: relative;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-
 }
-.flashcard.clicked{
-  width:  400px;
+.flashcard.clicked {
+  width: 400px;
   height: 400px;
 }
 
@@ -38,13 +37,12 @@
 }
 
 .flashcard-front {
-  background-color: darkslateblue;
+  background-color: rgb(216, 170, 17);
 }
 
 .flashcard-back {
   transform: rotateY(180deg);
-  background-color: aqua;
-
+  background-color: rgb(98, 108, 245);
 }
 
 .flashcard-text {
