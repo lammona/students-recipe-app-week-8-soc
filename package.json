@@ -1,12 +1,11 @@
 {
-  "name": "recipe-book-app",
+  "name": "week-7-hackathon-bc18-room1",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "server": "json-server --watch db.json --port 5000",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -24,7 +23,6 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
-    "json-server": "^1.0.0-beta.3",
     "vite": "^6.0.5"
   }
 }

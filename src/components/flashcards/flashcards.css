@@ -1,0 +1,21 @@
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  border: darkslateblue 3px solid;
+  max-width: 100%;
+  border-radius: 20px;
+  max-height: 400px;
+  overflow-y: scroll;
+  margin-top: 10px;
+}
+
+.cardContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.cardContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
