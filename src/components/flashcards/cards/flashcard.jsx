@@ -11,19 +11,20 @@ function Flashcard({ title, ingredients, instructions, img }) {
   };
 
   return (
-    <div 
-    className={`flashcard ${isFlipped ? "flipped" : ""} ${isClicked ? "clicked" : ""}`}
-    onClick={handleClick}   >
-   
-      <div className="flashcard-front" img src={img} alt="placeholder">
+    <div
+      className={`flashcard ${isFlipped ? "flipped" : ""} ${
+        isClicked ? "clicked" : ""
+      }`}
+      onClick={handleClick}
+    >
+      <div className="flashcard-front">
+        <img src={img} alt={title} className="card-image" />
         <span className="flashcard-text">{title}</span>
-        
       </div>
       <div className="flashcard-back">
         <span className="flashcard-text">
-        <span className="flashcard-text">{title}</span>
+          <span className="flashcard-text">{title}</span>
           <br />
-
           Ingredients: {ingredients}
           <br />
           <br />
@@ -33,4 +34,5 @@ function Flashcard({ title, ingredients, instructions, img }) {
     </div>
   );
 }
+
 export default Flashcard;

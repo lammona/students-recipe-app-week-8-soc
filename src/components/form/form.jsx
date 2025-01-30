@@ -55,7 +55,11 @@ function Form({ dispatch }) {
         required
         className="fixed-textarea"
       />
-      <button type="submit">Add Recipe</button>
+      <div className="button-container">
+        <button type="submit" role="button">
+          Add Recipe
+        </button>
+      </div>
     </form>
   );
 }
