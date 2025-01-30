@@ -1,0 +1,10 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Spaghetti Bolognese",
+      "ingredients": "Pasta, tomato sauce, beef, garlic, onion",
+      "instructions": "Cook pasta, make sauce, mix together"
+    }
+  ]
+}
