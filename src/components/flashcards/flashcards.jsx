@@ -2,59 +2,49 @@ import React, { useState, useEffect } from "react";
 import Flashcard from "./cards/flashcard";
 import "./flashcards.css";
 
-function FlashcardsContainer() {
-  const [recipes, setRecipe] = useState([]);
+function FlashcardsContainer({ recipes }) {
+  const initialCards = [
+    { id: "static1", title: "Cheat's fish & chips" },
+    { id: "static2", title: "Halloumi eggy crumpets" },
+    { id: "static3", title: "Special scrambled eggs" },
+    { id: "static4", title: "My favourite speedy sausage pizza" },
+    { id: "static5", title: "Mushroom cannelloni" },
+  ];
+
+  const [allCards, setAllCards] = useState([...initialCards]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch("http://localhost:5000/recipes");
         const data = await response.json();
-        setRecipe(data.recipes);
+        setAllCards([...initialCards, ...data]);
       } catch (error) {
-        console.error("error fetch data:".error);
+        console.error("Error fetching data:", error);
       }
     };
     fetchData();
   }, []);
-  return (
-    
 
+  useEffect(() => {
+    if (recipes.length > 0) {
+      setAllCards([...initialCards, ...recipes]);
+    }
+  }, [recipes]);
+
+  return (
     <div className="cardContainer">
-      <Flashcard
-      key= "1"
-      id= "1"
-      title= "Cheat's fish & chips" />
-          <Flashcard
-      key= "2"
-      id= "2"
-      title= "Halloumi eggy crumpets" />
-          <Flashcard
-      key= "2"
-      id= "2"
-      title= "Special scrambled eggs" />
-          <Flashcard
-      key= "2"
-      id= "2"
-      title= "My favourite speedy sausage pizza" />
-          <Flashcard
-      key= "2"
-      id= "2"
-      title= "Mushroom cannelloni" />
-     
-     
-     
-     
-     
-      {/* {recipes.map((recipe) => (
-        <Flashcard 
-        key={recipe.id}
-        id = {recipe.id}
-        title={ recipe.title}/>
-      ))} */}
+      {allCards.map((card) => (
+        <Flashcard
+          key={card.id}
+          id={card.id}
+          title={card.title}
+          ingredients={card.ingredients}
+          instructions={card.instructions}
+        />
+      ))}
     </div>
   );
-  
 }
 
 export default FlashcardsContainer;
