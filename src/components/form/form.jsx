@@ -5,12 +5,14 @@ import { use } from "react";
 
 function Form({ dispatch }) {
   const [title, setTitle] = useState("");
+  const [imgUrl, setImgUrl] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [instructions, setInstructions] = useState("");
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newRecipe = { title, ingredients, instructions };
+    const newRecipe = { title, imgUrl, ingredients, instructions };
 
     const response = await fetch("http://localhost:5001/recipes", {
       method: "POST",
@@ -29,6 +31,7 @@ function Form({ dispatch }) {
       setTitle("");
       setIngredients("");
       setInstructions("");
+      setImgUrl("");
     }
   };
 
@@ -41,6 +44,14 @@ function Form({ dispatch }) {
         onChange={(e) => setTitle(e.target.value)}
         required
         className="title-entry"
+      />
+      <input
+      type="text"
+      placeholder="Image URL"
+      value={imgUrl}
+      onChange={(e)=> setImgUrl(e.target.value)}
+      required
+      className="title-entry"
       />
       <textarea
         placeholder="Ingredients"

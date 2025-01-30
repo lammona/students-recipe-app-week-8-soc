@@ -62,7 +62,7 @@ function FlashcardsContainer({ recipes }) {
       {allCards.map((card) => (
         <Flashcard
           key={card.id}
-          img={card.img}
+          img={card.imgUrl}
           id={card.id}
           title={card.title}
           ingredients={card.ingredients}
