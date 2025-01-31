@@ -13,11 +13,12 @@
   position: relative;
   transition: transform 0.6s, box-shadow 0.3s ease;
   transform-style: preserve-3d;
+
 }
 
 .flashcard.clicked {
   width: 400px;
-  height: 400px;
+  height: 450px;
 }
 
 .flashcard.flipped {
@@ -39,7 +40,10 @@
   justify-content: center;
   border-radius: 20px;
   font-size: 10px;
+  overflow: visible;
+  padding: 10px;
 }
+
 
 .flashcard-front {
   background-color: rgb(216, 170, 17);
@@ -48,15 +52,20 @@
 
 .flashcard-back {
   transform: rotateY(180deg);
-  background-color: rgb(98, 108, 245);
+  background-image: url("beige-wooden-table-wooden-background.jpg");
 }
 
 .flashcard-text {
   display: block;
-  font-size: 1.2em;
+  font-size: 100%;
   font-weight: bold;
   text-align: center;
-  margin-top: 10px;
+  font-family: Phantomsans, sans-serif;
+  z-index: 1;
+ white-space: normal;
+ word-wrap: break-word;
+  text-overflow: ellipsis;
+
 }
 
 .flashcard-back .flashcard-text {
@@ -73,6 +82,7 @@
   left: 0;
 }
 
+
 .flashcard-front .flashcard-text {
   position: absolute;
   bottom: 10px;
@@ -83,4 +93,36 @@
   padding: 5px;
   margin: 0;
   border-radius: 0 0 20px 20px;
+}
+
+#ingredients{
+
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#ingredients-list {
+  align-items: flex-start;
+  margin-right: 0px;
+  padding-left: 20px
+;
+
+}
+#instructions-list {
+  list-style: decimal;
+  margin-right: 10px;
+}
+
+h3{
+  text-decoration: underline;
+
+}
+h1{
+  text-decoration: underline;
+  
+  font-size: 30px;
+ 
+  font-family: Phantomsans, sans-serif;
 }

@@ -22,13 +22,24 @@ function Flashcard({ title, ingredients, instructions, img }) {
         <span className="flashcard-text">{title}</span>
       </div>
       <div className="flashcard-back">
+        <img src="/src/assets/beige-wooden-textured-flooring-background.jpg" alt="background chopping board" className="card-image" />
+        
         <span className="flashcard-text">
-          <span className="flashcard-text">{title}</span>
-          <br />
-          Ingredients: {ingredients}
-          <br />
-          <br />
-          Instructions: {instructions}
+          <h1 >{title}</h1>
+          <h3 id="Ingredients "> Ingredients:</h3>
+          <ul id="ingredients-list">
+            {ingredients.split(', ').map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+
+          </ul>
+          <h3>Instructions</h3>
+          <ul id="instructions-list" >
+            {Array.isArray(instructions)? instructions.map((instruction, index) => (
+              <li  key={index}>{instruction}</li>
+            )) : <li>{instructions}</li>}
+          </ul>
+
         </span>
       </div>
     </div>
