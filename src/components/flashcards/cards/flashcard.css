@@ -13,7 +13,6 @@
   position: relative;
   transition: transform 0.6s, box-shadow 0.3s ease;
   transform-style: preserve-3d;
-
 }
 
 .flashcard.clicked {
@@ -44,7 +43,6 @@
   padding: 10px;
 }
 
-
 .flashcard-front {
   background-color: rgb(216, 170, 17);
   position: relative;
@@ -62,10 +60,21 @@
   text-align: center;
   font-family: Phantomsans, sans-serif;
   z-index: 1;
- white-space: normal;
- word-wrap: break-word;
+  white-space: normal;
+  word-wrap: break-word;
   text-overflow: ellipsis;
+  transition: opacity 0.3s ease;
+}
 
+.flashcard.clicked .flashcard-front .flashcard-text {
+  opacity: 0;
+}
+
+.flashcard.clicked .flashcard-back .flashcard-text {
+  opacity: 1;
+  position: relative;
+  color: black;
+  padding: 10px;
 }
 
 .flashcard-back .flashcard-text {
@@ -82,7 +91,6 @@
   left: 0;
 }
 
-
 .flashcard-front .flashcard-text {
   position: absolute;
   bottom: 10px;
@@ -95,8 +103,7 @@
   border-radius: 0 0 20px 20px;
 }
 
-#ingredients{
-
+#ingredients {
   text-align: left;
   width: 100%;
   margin: 0;
@@ -106,23 +113,20 @@
 #ingredients-list {
   align-items: flex-start;
   margin-right: 0px;
-  padding-left: 20px
-;
-
+  padding-left: 20px;
 }
 #instructions-list {
   list-style: decimal;
   margin-right: 10px;
 }
 
-h3{
+h3 {
+  text-decoration: underline;
+}
+h1 {
   text-decoration: underline;
 
-}
-h1{
-  text-decoration: underline;
-  
   font-size: 30px;
- 
+
   font-family: Phantomsans, sans-serif;
 }
