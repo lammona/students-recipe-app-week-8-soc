@@ -21,6 +21,15 @@ function App() {
   return (
     <div className="app-container">
       <Header />
+      return{" "}
+      <button
+        onClick={() => {
+          throw new Error("This is your first error!");
+        }}
+      >
+        Break the world
+      </button>
+      ;
       <Form dispatch={dispatch} />
       <FlashcardsContainer recipes={recipes} />
       <Footer />
